@@ -14,7 +14,8 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Dump_That_Junk" customModuleProvider="target">
             <connections>
-                <outlet property="sayThisTextField" destination="RYo-f5-QdW" id="4BW-dQ-tUp"/>
+                <outlet property="sayProgress" destination="JNr-z8-LZS" id="wlp-98-W1e"/>
+                <outlet property="sayThisTextField" destination="dvL-SZ-2eX" id="TK4-eM-MXh"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -690,27 +691,49 @@
                 <rect key="frame" x="0.0" y="0.0" width="293" height="225"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-Tc-XvC">
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-Tc-XvC">
                         <rect key="frame" x="214" y="177" width="65" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Talk" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZYN-Rf-Seq">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                         </buttonCell>
                         <connections>
                             <action selector="talk:" target="Voe-Tx-rLC" id="5aX-Jc-klE"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYo-f5-QdW">
-                        <rect key="frame" x="20" y="117" width="96" height="22"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nXP-BI-rhm">
+                        <rect key="frame" x="20" y="20" width="116" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Type text to speak" id="Ude-az-Pdr">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvL-SZ-2eX">
+                        <rect key="frame" x="20" y="45" width="253" height="131"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="bWC-fm-Aa9">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="4wy-fx-p3l">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="JNr-z8-LZS">
+                        <rect key="frame" x="138" y="184" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </progressIndicator>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="nXP-BI-rhm" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="188" id="6qx-6o-hew"/>
+                    <constraint firstItem="oMU-Tc-XvC" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="BGf-Kh-UKz"/>
+                    <constraint firstItem="nXP-BI-rhm" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="22" id="SWf-3Y-4ac"/>
+                    <constraint firstAttribute="trailing" secondItem="nXP-BI-rhm" secondAttribute="trailing" constant="159" id="TIj-49-6H4"/>
+                    <constraint firstAttribute="trailing" secondItem="oMU-Tc-XvC" secondAttribute="trailing" constant="20" id="U4B-xo-S07"/>
+                    <constraint firstAttribute="bottom" secondItem="nXP-BI-rhm" secondAttribute="bottom" constant="20" id="zJ8-Jn-son"/>
+                </constraints>
             </view>
             <point key="canvasLocation" x="45.5" y="93.5"/>
         </window>
