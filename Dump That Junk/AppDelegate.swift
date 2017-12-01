@@ -22,6 +22,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    @IBOutlet weak var sayThisTextField: NSTextField!
+    
 
+    
+    @IBAction func talk(_ sender: NSButton) {
+        let path = "/usr/bin/say"
+        let textToSay = sayThisTextField.stringValue
+        let arguments = [textToSay]
+        
+        sender.isEnabled = false
+        
+        let task = Process.launchedProcess(launchPath: path, arguments: arguments)
+        task.waitUntilExit()
+        
+        sender.isEnabled = true
+    }
+    
 }
 
